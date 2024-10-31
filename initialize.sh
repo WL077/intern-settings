@@ -54,4 +54,17 @@ fi
 echo "正在安装 oh-my-zsh..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
+# 更新 pip
+python -m pip install --upgrade pip
+
+# 安装 amlt
+echo "安装 amlt..."
+pip install -U amlt --index-url https://msrpypi.azurewebsites.net/stable/leloojoo
+
+# 创建 amlt project
+echo "创建 amlt project..."
+almt project create diffuser 
+amlt completion install
+
+
 echo "完成！"
